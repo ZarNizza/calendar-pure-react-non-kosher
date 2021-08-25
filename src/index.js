@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Calendar - pure REACT version, "my own bike ))"
+// skeleton edition
+
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import CalendarTable from "./calendarMatrix.js";
+import ToDo from "./ToDo.js";
+import "./index.css";
+
+function CalendarHeader() {
+  return (
+    <div>
+      <h2>Calendar</h2>
+      <p>pure REACT version, skeleton edition</p>
+      <p>data-picker & input parser & localStorage</p>
+    </div>
+  );
+}
+
+function Span() {
+  return <p> - - - - - </p>;
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div style={{margin:20}}>
+    <CalendarHeader />
+    <CalendarTable />
+    <Span />
+    <ToDo />
+    <Span />
+    </div>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
